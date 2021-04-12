@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{job.title}}</title>
-</head>
-<body>
+{% extends "api_calls/base.html" %}
+{% block content %}
 
-  <h1>{{ job.title }}</h1>
+{% block title %} {{job.title}} {% endblock %}
+    <h1>{{ job.title }}</h1>
     <p>{{ job.date }}</p>
     <p>{{ job.description }}</p>
-
-</body>
-</html>
+{% endblock %}

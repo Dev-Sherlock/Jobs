@@ -1,13 +1,24 @@
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>title</title>
-</head>
-<body>
-{% for job in jobs %}
-  <h1>{{ job.title }}</h1>
-    <p>{{ job.date }}</p>
-    <a href="{%url 'post' job.id%}">{{job.id}}</a>
-  {% endfor %}
-</body>
-</html>
+{% extends "api_calls/base.html" %}
+{% block content %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Date</th>
+      <th scope="col">Link</th>
+    </tr>
+  </thead>
+  <tbody>
+        {% for job in jobs %}
+        <tr>
+        <th scope="row">{{ job.id }}</th>
+        <td>{{ job.title }}</td>
+        <td>{{ job.date }}</td>
+        <td><a href="{%url 'post' job.id%}">{{job.id}}</a></td>
+        </tr>
+        {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
