@@ -1,0 +1,10 @@
+{% extends "api_calls/base.html" %}
+{% block content %}
+
+{% block title %} {{job.title}} {% endblock %}
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save">
+</form>
+{% endblock %}
+
