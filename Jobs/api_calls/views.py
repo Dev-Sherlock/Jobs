@@ -50,7 +50,3 @@ class JobDelete(DeleteView):
     success_url = reverse_lazy('index')
 
 
-class ContactFormView(FormView):
-    template_name = 'job_update.html'
-    form_class = Job
-    success_url = reverse_lazy('index')

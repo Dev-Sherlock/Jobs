@@ -5,4 +5,10 @@
     <h1>{{ job.title }}</h1>
     <p>{{ job.date }}</p>
     <p>{{ job.description }}</p>
+<a href="{%url 'post' job.id%}">{{job.id}}</a>
+<a href="{% url 'job-delete' job.id %}">&#8592;Delete this job post</a>
+
 {% endblock %}
+
+
+
