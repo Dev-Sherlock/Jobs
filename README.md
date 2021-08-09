@@ -12,7 +12,7 @@ To run this project, follow these steps:
 
 2.  Clone this repo:
 ```
-    git clone https://github.com/nello88/nello                    
+https://github.com/Dev-Sherlock/Jobs
 ```
 3.  Install dependencies:
 ```
