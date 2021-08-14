@@ -17,7 +17,9 @@ def index(request):
     if request.method=='GET':
         jobs=Job.objects.all()
     else:
-        jobs=Job.objects.filter(title__icontains='title')#STILL DOESN"T WORK
+        query = request.POST['query']
+        print(query)
+        jobs=Job.objects.filter(title__icontains= query)
 
     context={'jobs': jobs}
     return render(request, 'api_calls/index.html',context)
