@@ -7,3 +7,6 @@ class Job(models.Model):
     author=models.CharField(max_length=100,blank=True)
     date=models.DateField(auto_now_add=True)
     description=models.TextField(blank=True)
+
+    def __str__(self):
+        return self.title

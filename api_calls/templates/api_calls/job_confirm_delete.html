@@ -1,6 +1,7 @@
 {% extends "api_calls/base.html" %}
 {% block content %}
 
+{% if user.is_authenticated %}
 <div class="header-bar">
     <a href="{% url 'index' %}">&#8592;Go Back</a>
 </div>
@@ -12,7 +13,8 @@
         <input class="button" type="submit" value="Delete" >
     </form>
 </div>
-
-
+{% else %}
+<p>You have to <a href="{% url 'login' %}?next={{request.path}}">Login</a></p>
+{% endif %}
 
 {% endblock %}

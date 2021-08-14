@@ -1,9 +1,15 @@
 {% extends "api_calls/base.html" %}
 {% block content %}
-
 {% block title %} {{job.title}} {% endblock %}
+
+{% if user.is_authenticated %}
 <form method="post">{% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Save">
 </form>
+
+{% else %}
+<p>You have to <a href="{% url 'login' %}?next={{request.path}}">Login</a></p>
+{% endif %}
+
 {% endblock %}

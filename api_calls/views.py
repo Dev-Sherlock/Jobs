@@ -12,7 +12,7 @@ from django.urls import reverse_lazy
 CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 
 
-@cache_page(CACHE_TTL)
+# @cache_page(CACHE_TTL)
 def index(request):
     if request.method=='GET':
         jobs=Job.objects.all()
