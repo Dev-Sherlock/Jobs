@@ -1,4 +1,7 @@
 {% extends "api_calls/base.html" %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/signin.css' %}">
+
 {% block content %}
 
 {% if form.errors %}
@@ -13,12 +16,26 @@
         <p>Login to see the website</p>
     {% endif %}
 {% endif %}
-
+<main class="form-signin">
 <form method="POST" action="{% url 'login' %}">
+    <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+    <div class="form-floating">
     {% csrf_token %}
     {{ form.as_p }}
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
     <input type="submit" class="btn btn-primary" value="Login" />
     <input type="hidden" name="next" value="{{ next }}"/>
-</form>
+    </div>
+
+    <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+  </form>
+</main>
+
 
 {% endblock %}
