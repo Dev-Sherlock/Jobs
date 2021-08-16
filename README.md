@@ -7,6 +7,15 @@
 - Css
 - Bootstrap
 
+## Features:
+Any user has the following functionalities:
+- See the list of jobs on main page
+- Open and read details about specific job post 
+ 
+Logged in user also has the following functionalities:
+- Creating/Updating/Deleting job posts
+
+
 ## How to run the project locally:
 To run this project, follow these steps:
 
