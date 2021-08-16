@@ -4,6 +4,8 @@
 - Python
 - Django
 - Html
+- Css
+- Bootstrap
 
 ## How to run the project locally:
 To run this project, follow these steps:
