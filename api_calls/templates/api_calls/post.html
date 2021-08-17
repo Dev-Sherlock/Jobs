@@ -6,8 +6,7 @@
     <p>{{ job.date }}</p>
     <p> Posted by: {{ job.author }}</p>
     <p>{{ job.description }}</p>
-<a href="{%url 'post' job.id%}
-">{{job.id}}</a>
+<a href="{%url 'post' job.id%}">{{job.id}}</a>
 <a href="{% url 'job-delete' job.id %}">&#8592;Delete this job post</a>
 <a href="{% url 'job-update' job.id %}">&#8594;Update this job post</a>
 {% endblock %}

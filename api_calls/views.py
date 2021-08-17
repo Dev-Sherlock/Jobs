@@ -18,7 +18,6 @@ def index(request):
         jobs=Job.objects.all()
     else:
         query = request.POST['query']
-        print(query)
         jobs=Job.objects.filter(title__icontains= query)
 
     context={'jobs': jobs}
