@@ -121,3 +121,5 @@ REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
 CACHE_TTL = 60 * 15
 
+LOGIN_REDIRECT_URL = 'index'
+

@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.core.cache.backends.base import DEFAULT_TIMEOUT
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.decorators.cache import cache_page
 from .models import Job
 from django.views.generic.edit import FormView
@@ -8,6 +8,8 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.contrib.auth.forms import UserCreationForm
+
 
 CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 
@@ -57,3 +59,17 @@ class JobDelete(DeleteView):
     success_url = reverse_lazy('index')
 
 
+def signup(request):
+
+    if request.user.is_authenticated:
+        return redirect('index', username=request.user.username)
+
+    if request.method == 'POST':
+        f = UserCreationForm(request.POST)
+        if f.is_valid():
+            f.save()
+            return redirect('login')
+    else:
+        f = UserCreationForm()
+
+    return render(request, 'api_calls/signup.html', {'form': f})
