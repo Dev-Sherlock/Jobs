@@ -11,7 +11,9 @@
 Any user has the following functionalities:
 - See the list of jobs on main page
 - Open and read details about specific job post 
- 
+- Searching job posts by title
+
+
 Logged in user also has the following functionalities:
 - Creating/Updating/Deleting job posts
 
