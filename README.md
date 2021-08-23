@@ -41,3 +41,8 @@ https://github.com/Dev-Sherlock/Jobs
     python manage.py runserver
 ```
 6.  Open your browser and go to http://127.0.0.1:8000. 
+
+
+## Important:
+
+This project will not work without .env file, so download the environment file and put it into project folder.
