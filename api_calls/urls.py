@@ -1,8 +1,6 @@
 from django.urls import path,include
 from .views import *
 
-from rest_framework import routers
-
 urlpatterns = [
     path('', index, name="index"),
     path('<int:id>/', post, name="post"),

@@ -26,7 +26,7 @@ class JobDetail(generics.RetrieveUpdateDestroyAPIView):
 # @cache_page(CACHE_TTL)
 def index(request):
     if request.method == 'GET':
-        jobs = Job.objects.all()
+        jobs = Job.objects.all().order_by('date')
     else:
         query = request.POST['query']
         jobs = Job.objects.filter(title__icontains=query)
@@ -34,6 +34,8 @@ def index(request):
     context = {'jobs': jobs}
     return render(request, 'api_calls/index.html', context)
 
+    class Meta:
+        ordering=['date']
 
 @cache_page(CACHE_TTL)
 def post(request, id):
