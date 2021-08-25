@@ -8,14 +8,18 @@
 - Bootstrap
 
 ## Features:
-Any user has the following functionalities:
+1.Any user has the following functionalities:
 - See the list of jobs on main page
 - Open and read details about specific job post 
 - Searching job posts by title
 
 
-Logged in user also has the following functionalities:
+2.Logged in user also has the following functionalities:
 - Creating/Updating/Deleting job posts
+
+3.Users can make requests to API for :
+- Getting list of jobs posts
+- Getting specific job post
 
 
 ## How to run the project locally:
