@@ -20,6 +20,9 @@
 3.Users can make requests to API for :
 - Getting list of jobs posts
 - Getting specific job post
+- Creating a job post
+- Updating a job post
+- Deleting a job post
 
 
 ## How to run the project locally:
